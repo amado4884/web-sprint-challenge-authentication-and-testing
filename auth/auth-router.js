@@ -31,7 +31,8 @@ router.post("/register", validateNewUser, async (req, res) => {
   const { newUser } = req;
   const rounds = process.env.SALT_ROUNDS || 10;
   try {
-    newUser.password = await bcrpyt.hash(newUser.password, rounds);
+    newUser.password = await bcrpyt.hash(newUser.password, Number(rounds));
+
     const user = await Users.add(newUser);
     if (!user)
       res.status(500).json({ message: "There was an error registering" });

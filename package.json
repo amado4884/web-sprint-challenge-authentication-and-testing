@@ -4,7 +4,8 @@
   "description": "Authentication Sprint Challenge",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/LambdaSchool/Sprint-Challenge-Authentication/issues"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "homepage": "https://github.com/LambdaSchool/Sprint-Challenge-Authentication#readme",
   "dependencies": {
     "axios": "^0.20.0",
@@ -24,9 +28,12 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.1.1",
+    "jest": "^26.6.3",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.6",
-    "sqlite3": "^5.0.0"
+    "sqlite3": "^5.0.0",
+    "supertest": "^6.0.1",
+    "uuid": "^8.3.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.5"
